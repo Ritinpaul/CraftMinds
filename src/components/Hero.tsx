@@ -9,7 +9,7 @@ const Hero = () => {
         <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
             Transforming Ideas into{" "}
-            <span className="gradient-primary bg-clip-text text-transparent">
+            <span className="text-primary">
               Digital Reality
             </span>
           </h1>

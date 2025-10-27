@@ -74,7 +74,7 @@ const Services = () => {
       <section className="gradient-hero py-20">
         <div className="container mx-auto px-4 text-center animate-fade-in">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            Our <span className="gradient-primary bg-clip-text text-transparent">Services</span>
+            Our <span className="text-primary">Services</span>
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
             Comprehensive technology solutions designed to help your business thrive in the digital age

@@ -59,7 +59,7 @@ const ServicesGrid = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-3xl md:text-5xl font-bold mb-4">
-            Our <span className="gradient-primary bg-clip-text text-transparent">Services</span>
+            Our <span className="text-primary">Services</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Comprehensive solutions tailored to your business needs

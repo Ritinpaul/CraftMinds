@@ -29,7 +29,7 @@ const WhyChooseUs = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-3xl md:text-5xl font-bold mb-4">
-            Why <span className="gradient-primary bg-clip-text text-transparent">Choose Us</span>
+            Why <span className="text-primary">Choose Us</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             We deliver excellence through innovation, dedication, and expertise

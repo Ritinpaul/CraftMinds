@@ -77,7 +77,7 @@ const Contact = () => {
         <div className="container mx-auto px-4 text-center animate-fade-in">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
             Let's Build{" "}
-            <span className="gradient-primary bg-clip-text text-transparent">Together</span>
+            <span className="text-primary">Together</span>
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
             Have a project in mind? Share your ideas with us and let's create something amazing

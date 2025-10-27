@@ -21,7 +21,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="text-2xl font-bold gradient-primary bg-clip-text text-transparent">
+          <Link to="/" className="text-2xl font-bold text-primary">
             Cesta
           </Link>
 

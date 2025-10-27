@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <h3 className="text-2xl font-bold gradient-primary bg-clip-text text-transparent">
+            <h3 className="text-2xl font-bold text-primary">
               Cesta
             </h3>
             <p className="text-muted-foreground text-sm">

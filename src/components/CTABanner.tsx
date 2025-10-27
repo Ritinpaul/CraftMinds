@@ -14,7 +14,7 @@ const CTABanner = () => {
           </div>
           <h2 className="text-3xl md:text-5xl font-bold">
             Have an idea? Let's{" "}
-            <span className="gradient-primary bg-clip-text text-transparent">
+            <span className="text-primary">
               build it together
             </span>
           </h2>

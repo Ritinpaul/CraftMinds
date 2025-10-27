@@ -35,7 +35,7 @@ const About = () => {
       <section className="gradient-hero py-20">
         <div className="container mx-auto px-4 text-center animate-fade-in">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            About <span className="gradient-primary bg-clip-text text-transparent">Cesta</span>
+            About <span className="text-primary">Cesta</span>
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
             Your trusted technology partner dedicated to delivering digital excellence
@@ -48,7 +48,7 @@ const About = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto space-y-8 animate-fade-in">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-              Our <span className="gradient-primary bg-clip-text text-transparent">Story</span>
+              Our <span className="text-primary">Story</span>
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
               Cesta was founded with a simple yet powerful vision: to bridge the gap between businesses and technology. 
@@ -73,7 +73,7 @@ const About = () => {
       <section className="py-20 gradient-hero">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 animate-fade-in">
-            What Drives <span className="gradient-primary bg-clip-text text-transparent">Us</span>
+            What Drives <span className="text-primary">Us</span>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {values.map((value, index) => (
@@ -102,7 +102,7 @@ const About = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center space-y-6 animate-fade-in">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Our <span className="gradient-primary bg-clip-text text-transparent">Team</span>
+              Our <span className="text-primary">Team</span>
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
               Behind Cesta is a team of dedicated professionals with diverse backgrounds in software engineering, 
@@ -115,15 +115,15 @@ const About = () => {
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
               <div className="p-6 rounded-lg border border-border hover:shadow-glow transition-smooth">
-                <div className="text-4xl font-bold gradient-primary bg-clip-text text-transparent mb-2">50+</div>
+                <div className="text-4xl font-bold text-primary mb-2">50+</div>
                 <p className="text-muted-foreground">Projects Delivered</p>
               </div>
               <div className="p-6 rounded-lg border border-border hover:shadow-glow transition-smooth">
-                <div className="text-4xl font-bold gradient-primary bg-clip-text text-transparent mb-2">30+</div>
+                <div className="text-4xl font-bold text-primary mb-2">30+</div>
                 <p className="text-muted-foreground">Expert Developers</p>
               </div>
               <div className="p-6 rounded-lg border border-border hover:shadow-glow transition-smooth">
-                <div className="text-4xl font-bold gradient-primary bg-clip-text text-transparent mb-2">100%</div>
+                <div className="text-4xl font-bold text-primary mb-2">100%</div>
                 <p className="text-muted-foreground">Client Satisfaction</p>
               </div>
             </div>
