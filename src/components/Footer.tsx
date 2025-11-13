@@ -5,40 +5,40 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-muted border-t border-border">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+    <footer className="relative z-10 border-t border-white/10 bg-cesta-overlay backdrop-blur-xl">
+      <div className="container mx-auto px-4 py-16">
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-4">
           {/* Company Info */}
           <div className="space-y-4">
-            <h3 className="text-2xl font-bold text-primary">
-              Cesta
+            <h3 className="text-sm font-extrabold uppercase tracking-[0.6rem] holographic-text">
+              CRAFTMINDS
             </h3>
-            <p className="text-muted-foreground text-sm">
+            <p className="text-sm text-soft">
               Your trusted tech partner for web, app, AI, and enterprise solutions.
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-semibold mb-4">Quick Links</h4>
-            <ul className="space-y-2">
+            <h4 className="mb-4 font-semibold text-white">Quick Links</h4>
+            <ul className="space-y-3">
               <li>
-                <Link to="/" className="text-muted-foreground hover:text-primary transition-smooth text-sm">
+                <Link to="/" className="text-sm text-soft transition-smooth hover:text-white">
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="text-muted-foreground hover:text-primary transition-smooth text-sm">
+                <Link to="/services" className="text-sm text-soft transition-smooth hover:text-white">
                   Services
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="text-muted-foreground hover:text-primary transition-smooth text-sm">
+                <Link to="/about" className="text-sm text-soft transition-smooth hover:text-white">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="text-muted-foreground hover:text-primary transition-smooth text-sm">
+                <Link to="/contact" className="text-sm text-soft transition-smooth hover:text-white">
                   Contact
                 </Link>
               </li>
@@ -47,29 +47,29 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h4 className="font-semibold mb-4">Services</h4>
-            <ul className="space-y-2">
-              <li className="text-muted-foreground text-sm">Web Development</li>
-              <li className="text-muted-foreground text-sm">Mobile Apps</li>
-              <li className="text-muted-foreground text-sm">AI & ML Solutions</li>
-              <li className="text-muted-foreground text-sm">Enterprise Solutions</li>
+            <h4 className="mb-4 font-semibold text-white">Services</h4>
+            <ul className="space-y-3 text-sm text-soft">
+              <li>Web Development</li>
+              <li>Mobile Apps</li>
+              <li>AI & ML Solutions</li>
+              <li>Enterprise Solutions</li>
             </ul>
           </div>
 
           {/* Contact Info */}
           <div>
-            <h4 className="font-semibold mb-4">Get in Touch</h4>
-            <ul className="space-y-3">
-              <li className="flex items-center gap-2 text-muted-foreground text-sm">
-                <Mail size={16} className="text-primary" />
-                info@cesta.com
+            <h4 className="mb-4 font-semibold text-white">Get in Touch</h4>
+            <ul className="space-y-4 text-sm text-soft">
+              <li className="flex items-center gap-3">
+                <Mail size={16} className="text-cesta-electric" />
+                info@craftminds.com
               </li>
-              <li className="flex items-center gap-2 text-muted-foreground text-sm">
-                <Phone size={16} className="text-primary" />
+              <li className="flex items-center gap-3">
+                <Phone size={16} className="text-cesta-gold" />
                 +1 (555) 123-4567
               </li>
-              <li className="flex items-center gap-2 text-muted-foreground text-sm">
-                <MapPin size={16} className="text-primary" />
+              <li className="flex items-start gap-3">
+                <MapPin size={16} className="text-cesta-purple" />
                 San Francisco, CA
               </li>
             </ul>
@@ -77,16 +77,16 @@ const Footer = () => {
         </div>
 
         {/* Social Links & Copyright */}
-        <div className="mt-12 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-muted-foreground text-sm">
-            © {currentYear} Cesta. All rights reserved.
+        <div className="mt-16 flex flex-col items-center justify-between gap-6 border-t border-white/10 pt-10 text-sm text-soft md:flex-row md:gap-4">
+          <p>
+            © {currentYear} CraftMinds. All rights reserved.
           </p>
           <div className="flex gap-4">
             <a
               href="https://linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-smooth"
+              className="transition-smooth text-soft hover:text-white"
               aria-label="LinkedIn"
             >
               <Linkedin size={20} />
@@ -95,7 +95,7 @@ const Footer = () => {
               href="https://twitter.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-smooth"
+              className="transition-smooth text-soft hover:text-white"
               aria-label="Twitter"
             >
               <Twitter size={20} />
@@ -104,7 +104,7 @@ const Footer = () => {
               href="https://github.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-smooth"
+              className="transition-smooth text-soft hover:text-white"
               aria-label="GitHub"
             >
               <Github size={20} />
@@ -113,7 +113,7 @@ const Footer = () => {
               href="https://instagram.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-smooth"
+              className="transition-smooth text-soft hover:text-white"
               aria-label="Instagram"
             >
               <Instagram size={20} />

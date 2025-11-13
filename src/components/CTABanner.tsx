@@ -4,25 +4,22 @@ import { Sparkles } from "lucide-react";
 
 const CTABanner = () => {
   return (
-    <section className="py-20 gradient-hero">
+    <section className="relative z-10 py-24">
       <div className="container mx-auto px-4">
-        <div className="max-w-3xl mx-auto text-center space-y-6 animate-fade-in">
+        <div className="glass-card glass-border mx-auto max-w-3xl space-y-6 rounded-3xl p-12 text-center shadow-cesta-card backdrop-blur-xl animate-fade-in">
           <div className="flex justify-center">
-            <div className="w-16 h-16 rounded-full gradient-primary flex items-center justify-center shadow-glow">
-              <Sparkles className="text-primary-foreground" size={28} />
+            <div className="flex h-16 w-16 items-center justify-center rounded-2xl icon-gradient-cyan shadow-cesta-glow">
+              <Sparkles className="text-white" size={28} />
             </div>
           </div>
-          <h2 className="text-3xl md:text-5xl font-bold">
-            Have an idea? Let's{" "}
-            <span className="text-primary">
-              build it together
-            </span>
+          <h2 className="text-3xl font-bold md:text-5xl">
+            Have an idea? Let&apos;s <span className="holographic-text">build it together</span>
           </h2>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-lg text-soft">
             Transform your vision into reality with our expert team. Get started today!
           </p>
           <Link to="/contact">
-            <Button variant="hero" size="lg">
+            <Button variant="action" size="lg" className="shadow-cesta-glow">
               Start Your Project
             </Button>
           </Link>

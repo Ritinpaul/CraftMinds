@@ -17,73 +17,73 @@ const Navbar = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <Link to="/" className="text-2xl font-bold text-primary">
-            Cesta
-          </Link>
+    <nav className="fixed left-1/2 top-6 z-50 w-full -translate-x-1/2 px-4 sm:px-6">
+      <div className="mx-auto flex max-w-7xl items-center justify-between rounded-full border border-white/10 bg-cesta-overlay px-10 py-4 shadow-cesta-card backdrop-blur-xl">
+        {/* Logo */}
+        <Link to="/" className="text-base font-extrabold uppercase tracking-[0.6rem] holographic-text">
+          CRAFTMINDS
+        </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={`transition-smooth ${
-                  isActive(link.path)
-                    ? "text-primary font-semibold"
-                    : "text-foreground hover:text-primary"
-                }`}
-              >
-                {link.name}
-              </Link>
-            ))}
-            <Link to="/contact">
-              <Button variant="hero" size="sm">
-                Get a Quote
-              </Button>
+        {/* Desktop Navigation */}
+        <div className="hidden items-center gap-8 md:flex">
+          {navLinks.map((link) => (
+            <Link
+              key={link.path}
+              to={link.path}
+              className={`text-base font-medium transition-smooth ${
+                isActive(link.path)
+                  ? "text-white"
+                  : "text-soft hover:text-white"
+              }`}
+            >
+              {link.name}
             </Link>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden text-foreground"
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle menu"
-          >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          ))}
+          <Link to="/contact">
+            <Button variant="cta" size="sm" className="shadow-cesta-glow">
+              Get a Quote
+            </Button>
+          </Link>
         </div>
 
-        {/* Mobile Navigation */}
-        {isOpen && (
-          <div className="md:hidden py-4 animate-fade-in">
+        {/* Mobile Menu Button */}
+        <button
+          className="rounded-full p-2 text-soft transition-smooth hover:text-white md:hidden"
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label="Toggle menu"
+        >
+          {isOpen ? <X size={22} /> : <Menu size={22} />}
+        </button>
+      </div>
+
+      {/* Mobile Navigation */}
+      {isOpen && (
+        <div className="mx-auto mt-3 max-w-6xl animate-fade-in md:hidden">
+          <div className="glass-card glass-border rounded-3xl border border-white/10 p-6 shadow-cesta-card backdrop-blur-xl">
             <div className="flex flex-col space-y-4">
               {navLinks.map((link) => (
                 <Link
                   key={link.path}
                   to={link.path}
                   onClick={() => setIsOpen(false)}
-                  className={`transition-smooth ${
+                  className={`text-sm font-medium transition-smooth ${
                     isActive(link.path)
-                      ? "text-primary font-semibold"
-                      : "text-foreground hover:text-primary"
+                      ? "text-white"
+                      : "text-soft hover:text-white"
                   }`}
                 >
                   {link.name}
                 </Link>
               ))}
               <Link to="/contact" onClick={() => setIsOpen(false)}>
-                <Button variant="hero" size="sm" className="w-full">
+                <Button variant="cta" size="sm" className="w-full shadow-cesta-glow">
                   Get a Quote
                 </Button>
               </Link>
             </div>
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </nav>
   );
 };

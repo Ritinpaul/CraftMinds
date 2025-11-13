@@ -1,86 +1,94 @@
 import { 
-  Building2, 
-  Users, 
-  Smartphone, 
-  Brain, 
-  Database, 
-  HeartHandshake, 
-  Globe, 
-  Shield 
-} from "lucide-react";
+  FaBuilding, 
+  FaUsers, 
+  FaMobileAlt, 
+  FaBrain, 
+  FaDatabase, 
+  FaHandshake, 
+  FaGlobe, 
+  FaLink 
+} from "react-icons/fa";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 const services = [
   {
-    icon: Building2,
+    icon: FaBuilding,
     title: "Enterprise Solutions",
     description: "Improve business efficiency while reducing operational costs.",
+    iconGradient: "icon-gradient-purple",
   },
   {
-    icon: Users,
+    icon: FaUsers,
     title: "Hire Developer",
     description: "Hire dedicated developers to bring your ideas to life.",
+    iconGradient: "icon-gradient-electric",
   },
   {
-    icon: Smartphone,
+    icon: FaMobileAlt,
     title: "Mobile App Development",
     description: "Build user-friendly and engaging mobile apps.",
+    iconGradient: "icon-gradient-gold",
   },
   {
-    icon: Brain,
+    icon: FaBrain,
     title: "AI & ML Solutions",
     description: "Reshape your business with intelligent, data-driven technology.",
+    iconGradient: "icon-gradient-cyan",
   },
   {
-    icon: Database,
+    icon: FaDatabase,
     title: "ERP Solutions",
     description: "Streamline operations with customizable ERP systems.",
+    iconGradient: "icon-gradient-purple",
   },
   {
-    icon: HeartHandshake,
+    icon: FaHandshake,
     title: "CRM Development",
     description: "Enhance customer relationships with efficient CRM tools.",
+    iconGradient: "icon-gradient-pink",
   },
   {
-    icon: Globe,
+    icon: FaGlobe,
     title: "Website Development",
     description: "Build high-performance, modern websites.",
+    iconGradient: "icon-gradient-blue",
   },
   {
-    icon: Shield,
+    icon: FaLink,
     title: "Blockchain Development",
     description: "Utilize secure and scalable blockchain technology.",
+    iconGradient: "icon-gradient-cyan",
   },
 ];
 
 const ServicesGrid = () => {
   return (
-    <section className="py-20 bg-background">
+    <section className="relative z-10 bg-transparent py-24">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">
-            Our <span className="text-primary">Services</span>
+        <div className="mb-16 text-center animate-fade-in">
+          <h2 className="text-3xl font-bold md:text-5xl">
+            Our <span className="holographic-text">Services</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-soft">
             Comprehensive solutions tailored to your business needs
           </p>
         </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
           {services.map((service, index) => (
             <Card 
               key={index} 
-              className="transition-smooth hover:shadow-glow hover:scale-105 border-border animate-fade-in"
+              className="glass-card border border-white/10 transition-smooth hover:scale-[1.03] hover:shadow-cesta-glow animate-fade-in"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <CardHeader>
-                <div className="w-12 h-12 rounded-lg gradient-primary flex items-center justify-center mb-4">
-                  <service.icon className="text-primary-foreground" size={24} />
+                <div className={`mb-4 flex h-12 w-12 items-center justify-center rounded-xl ${service.iconGradient} shadow-cesta-glow`}>
+                  <service.icon className="text-white text-xl" style={{ fontSize: '1.5rem' }} />
                 </div>
                 <CardTitle className="text-xl">{service.title}</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-muted-foreground">
+                <CardDescription className="text-soft">
                   {service.description}
                 </CardDescription>
               </CardContent>

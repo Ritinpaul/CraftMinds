@@ -23,7 +23,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaPaperPlane } from "react-icons/fa";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -69,63 +69,62 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-cesta-dark text-foreground">
       <Navbar />
       
       {/* Header Section */}
-      <section className="gradient-hero py-20">
+      <section className="gradient-hero py-40">
         <div className="container mx-auto px-4 text-center animate-fade-in">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            Let's Build{" "}
-            <span className="text-primary">Together</span>
+          <h1 className="mb-6 text-4xl font-bold md:text-6xl">
+            Let&apos;s Build <span className="holographic-text">Together</span>
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="mx-auto max-w-3xl text-lg text-soft md:text-xl">
             Have a project in mind? Share your ideas with us and let's create something amazing
           </p>
         </div>
       </section>
 
       {/* Contact Form & Info Section */}
-      <section className="py-20 bg-background">
+      <section className="bg-transparent py-24">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-3">
             {/* Contact Info */}
             <div className="space-y-8 animate-fade-in">
               <div>
-                <h2 className="text-2xl font-bold mb-6">Get in Touch</h2>
-                <p className="text-muted-foreground">
+                <h2 className="mb-6 text-2xl font-bold">Get in Touch</h2>
+                <p className="text-soft">
                   We're here to help and answer any questions you might have. We look forward to hearing from you.
                 </p>
               </div>
               
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-lg gradient-primary flex items-center justify-center flex-shrink-0">
-                    <Mail className="text-primary-foreground" size={20} />
+                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl icon-gradient-purple shadow-cesta-glow">
+                    <FaEnvelope className="text-white text-xl" style={{ fontSize: '1.25rem' }} />
                   </div>
                   <div>
                     <h3 className="font-semibold mb-1">Email</h3>
-                    <p className="text-muted-foreground">info@cesta.com</p>
+                    <p className="text-soft">info@craftminds.com</p>
                   </div>
                 </div>
                 
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-lg gradient-primary flex items-center justify-center flex-shrink-0">
-                    <Phone className="text-primary-foreground" size={20} />
+                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl icon-gradient-gold shadow-cesta-glow">
+                    <FaPhone className="text-white text-xl" style={{ fontSize: '1.25rem' }} />
                   </div>
                   <div>
                     <h3 className="font-semibold mb-1">Phone</h3>
-                    <p className="text-muted-foreground">+1 (555) 123-4567</p>
+                    <p className="text-soft">+1 (555) 123-4567</p>
                   </div>
                 </div>
                 
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-lg gradient-primary flex items-center justify-center flex-shrink-0">
-                    <MapPin className="text-primary-foreground" size={20} />
+                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl icon-gradient-cyan shadow-cesta-glow">
+                    <FaMapMarkerAlt className="text-white text-xl" style={{ fontSize: '1.25rem' }} />
                   </div>
                   <div>
                     <h3 className="font-semibold mb-1">Office</h3>
-                    <p className="text-muted-foreground">
+                    <p className="text-soft">
                       123 Tech Street<br />
                       San Francisco, CA 94102<br />
                       United States
@@ -137,8 +136,8 @@ const Contact = () => {
 
             {/* Contact Form */}
             <div className="lg:col-span-2 animate-fade-in" style={{ animationDelay: "0.2s" }}>
-              <div className="bg-card border border-border rounded-lg p-6 md:p-8 shadow-lg">
-                <h2 className="text-2xl font-bold mb-6">Project Proposal</h2>
+              <div className="glass-card glass-border rounded-3xl border border-white/10 p-6 shadow-cesta-card md:p-10">
+                <h2 className="mb-6 text-2xl font-bold">Project Proposal</h2>
                 <Form {...form}>
                   <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -261,11 +260,11 @@ const Contact = () => {
                       type="submit" 
                       variant="hero" 
                       size="lg" 
-                      className="w-full"
+                      className="w-full shadow-cesta-glow text-lg bg-gradient-to-r from-purple-600 via-pink-500 to-orange-500 hover:from-purple-500 hover:via-pink-400 hover:to-orange-400"
                       disabled={isSubmitting}
                     >
                       {isSubmitting ? "Submitting..." : "Submit Proposal"}
-                      <Send className="ml-2" size={18} />
+                      <FaPaperPlane className="ml-2" style={{ fontSize: '1.125rem' }} />
                     </Button>
                   </form>
                 </Form>

@@ -1,73 +1,103 @@
-# Welcome to your Lovable project
+# CraftMinds - Digital Crafts
 
-## Project info
+A modern, professional website for CraftMinds, a technology company specializing in web development, mobile apps, AI solutions, and enterprise software.
 
-**URL**: https://lovable.dev/projects/dd96107b-38f3-4c76-8257-ac9997e9b78c
+## Project Overview
 
-## How can I edit this code?
+**CraftMinds** - Transforming Ideas into Digital Reality
 
-There are several ways of editing your application.
+This is a React-based website showcasing CraftMinds' services and expertise in:
+- Web Development
+- Mobile App Development
+- AI & Machine Learning Solutions
+- Enterprise Software (ERP, CRM)
+- Blockchain Development
 
-**Use Lovable**
+## Features
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/dd96107b-38f3-4c76-8257-ac9997e9b78c) and start prompting.
+- **3D Hero Animation**: Interactive Three.js-powered cube animation with professional rose gold/copper aesthetic
+- **Responsive Design**: Fully responsive layout optimized for all devices
+- **Modern UI/UX**: Beautiful gradient animations, smooth transitions, and professional styling
+- **Service Showcase**: Comprehensive display of services with interactive cards
+- **Contact Form**: Functional contact form with validation
+- **About Section**: Company mission, vision, and values presentation
 
-Changes made via Lovable will be committed automatically to this repo.
+## Technologies Used
 
-**Use your preferred IDE**
+- **Vite** - Build tool and development server
+- **TypeScript** - Type-safe JavaScript
+- **React** - UI library
+- **React Router DOM** - Client-side routing
+- **Three.js** - 3D graphics and animations
+- **shadcn-ui** - UI component library
+- **Tailwind CSS** - Utility-first CSS framework
+- **react-icons** - Icon library
+- **Zod** - Schema validation
+- **React Hook Form** - Form management
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## Getting Started
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Prerequisites
 
-Follow these steps:
+- Node.js (v18 or higher recommended)
+- npm or yarn
 
+### Installation
+
+1. Clone the repository:
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
 git clone <YOUR_GIT_URL>
+cd cesta-digital-crafts
+```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+2. Install dependencies:
+```sh
+npm install
+```
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+3. Start the development server:
+```sh
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+4. Open your browser and navigate to `http://localhost:5173`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Build for Production
 
-**Use GitHub Codespaces**
+```sh
+npm run build
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+The built files will be in the `dist` directory.
 
-## What technologies are used for this project?
+### Preview Production Build
 
-This project is built with:
+```sh
+npm run preview
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## Project Structure
 
-## How can I deploy this project?
+```
+src/
+├── components/     # Reusable React components
+│   ├── Hero.tsx   # Hero section with 3D animation
+│   ├── Navbar.tsx # Navigation bar
+│   └── ...
+├── pages/         # Page components
+│   ├── Home.tsx
+│   ├── About.tsx
+│   ├── Services.tsx
+│   └── Contact.tsx
+├── App.tsx        # Main app component
+└── main.tsx       # Entry point
+```
 
-Simply open [Lovable](https://lovable.dev/projects/dd96107b-38f3-4c76-8257-ac9997e9b78c) and click on Share -> Publish.
+## Development
 
-## Can I connect a custom domain to my Lovable project?
+- **Linting**: `npm run lint`
+- **Type Checking**: TypeScript is configured to check types during development
 
-Yes, you can!
+## License
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+This project is private and proprietary.

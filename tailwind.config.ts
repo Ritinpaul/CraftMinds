@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import animatePlugin from "tailwindcss-animate";
 
 export default {
   darkMode: ["class"],
@@ -57,6 +58,11 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        "cesta-dark": "hsl(240 52% 8%)",
+        "cesta-foreground": "hsl(240 14% 94%)",
+        "cesta-purple": "hsl(279 37% 27%)",
+        "cesta-electric": "hsl(272 76% 53%)",
+        "cesta-gold": "hsl(50 95% 56%)",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -107,7 +113,18 @@ export default {
         "fade-in": "fade-in 0.6s ease-out",
         "slide-in": "slide-in 0.6s ease-out",
       },
+      boxShadow: {
+        "cesta-card": "0 4px 60px hsl(0 0% 0% / 0.2)",
+        "cesta-glow": "0 15px 45px hsl(272 76% 53% / 0.25)",
+      },
+      backgroundImage: {
+        "cesta-gradient": "linear-gradient(45deg, hsl(279 37% 27%), hsl(272 76% 53%), hsl(50 95% 56%))",
+        "cesta-holographic": "linear-gradient(90deg, hsl(272 76% 53%), hsl(50 95% 56%), hsl(279 37% 27%), hsl(272 76% 53%))",
+      },
+      fontFamily: {
+        sans: ["Inter", "system-ui", "sans-serif"],
+      },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [animatePlugin],
 } satisfies Config;
