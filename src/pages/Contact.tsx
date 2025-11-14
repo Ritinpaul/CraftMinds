@@ -176,7 +176,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold mb-1">Phone</h3>
-                    <p className="text-soft">+1 (555) 123-4567</p>
+                    <p className="text-soft">+91 9136474511</p>
                   </div>
                 </div>
                 
@@ -187,9 +187,8 @@ const Contact = () => {
                   <div>
                     <h3 className="font-semibold mb-1">Office</h3>
                     <p className="text-soft">
-                      123 Tech Street<br />
-                      San Francisco, CA 94102<br />
-                      United States
+                      Chennai, Tamil Nadu, India<br />
+                      Postal Code: 603203
                     </p>
                   </div>
                 </div>
@@ -239,7 +238,7 @@ const Contact = () => {
                         <FormItem>
                           <FormLabel>Phone (Optional)</FormLabel>
                           <FormControl>
-                            <Input type="tel" placeholder="+1 (555) 000-0000" {...field} />
+                            <Input type="tel" placeholder="+91 1234567890" {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
