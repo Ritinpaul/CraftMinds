@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { 
@@ -13,6 +14,7 @@ import {
   FaGlobe, 
   FaLink 
 } from "react-icons/fa";
+import { getBreadcrumbSchema, getServiceSchema } from "@/lib/structuredData";
 
 const services = [
   {
@@ -74,9 +76,41 @@ const services = [
 ];
 
 const Services = () => {
+  const baseUrl = import.meta.env.VITE_SITE_URL || "https://craftminds.com";
+  const servicesUrl = `${baseUrl}/services`;
+
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: "Home", url: baseUrl },
+    { name: "Services", url: servicesUrl },
+  ]);
+
+  const servicesSchema = services.map((service) =>
+    getServiceSchema({
+      name: service.title,
+      description: service.details || service.description,
+      provider: {
+        "@type": "Organization",
+        name: "CraftMinds",
+      },
+      areaServed: "Worldwide",
+      serviceType: service.title,
+    })
+  );
+
+  const structuredData = [breadcrumbSchema, ...servicesSchema];
+
   return (
-    <div className="min-h-screen bg-cesta-dark text-foreground">
-      <Navbar />
+    <>
+      <SEO
+        title="Our Services - CraftMinds | Web, Mobile, AI & Enterprise Solutions"
+        description="Comprehensive technology solutions designed to help your business thrive. Enterprise solutions, mobile apps, AI/ML, ERP, CRM, web development, and blockchain services."
+        keywords="enterprise solutions, mobile app development, AI ML solutions, ERP systems, CRM development, website development, blockchain development, hire developers, custom software"
+        image={`${baseUrl}/placeholder.svg`}
+        url={servicesUrl}
+        structuredData={structuredData}
+      />
+      <div className="min-h-screen bg-cesta-dark text-foreground">
+        <Navbar />
       
       {/* Header Section */}
       <section className="gradient-hero py-40">
@@ -135,7 +169,8 @@ const Services = () => {
       </section>
 
       <Footer />
-    </div>
+      </div>
+    </>
   );
 };
 

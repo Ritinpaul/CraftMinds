@@ -4,6 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -24,6 +25,8 @@ import {
 } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaPaperPlane } from "react-icons/fa";
+import { getBreadcrumbSchema, getLocalBusinessSchema } from "@/lib/structuredData";
+import { trackFormSubmission } from "@/lib/analytics";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -54,6 +57,10 @@ const Contact = () => {
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     setIsSubmitting(true);
+    
+    // Track form submission
+    trackFormSubmission("contact_form");
+    
     // Simulate form submission
     await new Promise((resolve) => setTimeout(resolve, 1000));
     
@@ -68,9 +75,42 @@ const Contact = () => {
     setIsSubmitting(false);
   };
 
+  const baseUrl = import.meta.env.VITE_SITE_URL || "https://craftminds.com";
+  const contactUrl = `${baseUrl}/contact`;
+
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: "Home", url: baseUrl },
+    { name: "Contact", url: contactUrl },
+  ]);
+
+  const localBusinessSchema = getLocalBusinessSchema({
+    name: "CraftMinds",
+    address: {
+      streetAddress: "123 Tech Street",
+      addressLocality: "San Francisco",
+      addressRegion: "CA",
+      postalCode: "94102",
+      addressCountry: "US",
+    },
+    telephone: "+1 (555) 123-4567",
+    email: "info@craftminds.com",
+    url: baseUrl,
+  });
+
+  const structuredData = [breadcrumbSchema, localBusinessSchema];
+
   return (
-    <div className="min-h-screen bg-cesta-dark text-foreground">
-      <Navbar />
+    <>
+      <SEO
+        title="Contact CraftMinds - Let's Build Together"
+        description="Have a project in mind? Get in touch with CraftMinds. Share your ideas and let's create something amazing together. Expert technology solutions for your business."
+        keywords="contact CraftMinds, get quote, project proposal, hire developers, custom software development, technology consultation"
+        image={`${baseUrl}/placeholder.svg`}
+        url={contactUrl}
+        structuredData={structuredData}
+      />
+      <div className="min-h-screen bg-cesta-dark text-foreground">
+        <Navbar />
       
       {/* Header Section */}
       <section className="gradient-hero py-40">
@@ -275,7 +315,8 @@ const Contact = () => {
       </section>
 
       <Footer />
-    </div>
+      </div>
+    </>
   );
 };
 

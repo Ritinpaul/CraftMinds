@@ -1,7 +1,9 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { FaBullseye, FaEye, FaHeart, FaBolt } from "react-icons/fa";
+import { getBreadcrumbSchema, getOrganizationSchema } from "@/lib/structuredData";
 
 const values = [
   {
@@ -31,9 +33,39 @@ const values = [
 ];
 
 const About = () => {
+  const baseUrl = import.meta.env.VITE_SITE_URL || "https://craftminds.com";
+  const aboutUrl = `${baseUrl}/about`;
+
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: "Home", url: baseUrl },
+    { name: "About", url: aboutUrl },
+  ]);
+
+  const organizationSchema = getOrganizationSchema({
+    name: "CraftMinds",
+    url: baseUrl,
+    description: "Your trusted technology partner dedicated to delivering digital excellence. We empower businesses with innovative technology solutions that drive growth, efficiency, and digital transformation.",
+    contactPoint: {
+      email: "info@craftminds.com",
+      contactType: "Customer Service",
+      areaServed: "Worldwide",
+    },
+  });
+
+  const structuredData = [breadcrumbSchema, organizationSchema];
+
   return (
-    <div className="min-h-screen bg-cesta-dark text-foreground">
-      <Navbar />
+    <>
+      <SEO
+        title="About CraftMinds - Your Trusted Technology Partner"
+        description="Learn about CraftMinds - a team of passionate technologists dedicated to delivering digital excellence. Our mission, vision, values, and commitment to innovation."
+        keywords="about CraftMinds, technology company, software development team, digital transformation, tech partner, company mission, company values"
+        image={`${baseUrl}/placeholder.svg`}
+        url={aboutUrl}
+        structuredData={structuredData}
+      />
+      <div className="min-h-screen bg-cesta-dark text-foreground">
+        <Navbar />
       
       {/* Header Section */}
       <section className="gradient-hero py-40">
@@ -136,7 +168,8 @@ const About = () => {
       </section>
 
       <Footer />
-    </div>
+      </div>
+    </>
   );
 };
 
