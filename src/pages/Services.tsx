@@ -90,7 +90,7 @@ const Services = () => {
       description: service.details || service.description,
       provider: {
         "@type": "Organization",
-        name: "CraftMinds",
+        name: "CraftMind",
       },
       areaServed: "Worldwide",
       serviceType: service.title,
@@ -102,7 +102,7 @@ const Services = () => {
   return (
     <>
       <SEO
-        title="Our Services - CraftMinds | Web, Mobile, AI & Enterprise Solutions"
+        title="Our Services - CraftMind | Web, Mobile, AI & Enterprise Solutions"
         description="Comprehensive technology solutions designed to help your business thrive. Enterprise solutions, mobile apps, AI/ML, ERP, CRM, web development, and blockchain services."
         keywords="enterprise solutions, mobile app development, AI ML solutions, ERP systems, CRM development, website development, blockchain development, hire developers, custom software"
         image={`${baseUrl}/placeholder.svg`}

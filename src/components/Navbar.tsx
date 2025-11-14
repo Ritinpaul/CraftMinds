@@ -21,7 +21,7 @@ const Navbar = () => {
       <div className="mx-auto flex max-w-7xl items-center justify-between rounded-full border border-white/10 bg-cesta-overlay px-10 py-4 shadow-cesta-card backdrop-blur-xl">
         {/* Logo */}
         <Link to="/" className="text-base font-extrabold uppercase tracking-[0.6rem] holographic-text">
-          CRAFTMINDS
+          CRAFTMIND
         </Link>
 
         {/* Desktop Navigation */}

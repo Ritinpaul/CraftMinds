@@ -107,7 +107,7 @@ const Contact = () => {
   ]);
 
   const localBusinessSchema = getLocalBusinessSchema({
-    name: "CraftMinds",
+    name: "CraftMind",
     address: {
       streetAddress: "Chennai, Tamil Nadu, India",
       addressLocality: "",
@@ -124,9 +124,9 @@ const Contact = () => {
   return (
     <>
       <SEO
-        title="Contact CraftMinds - Let's Build Together"
-        description="Have a project in mind? Get in touch with CraftMinds. Share your ideas and let's create something amazing together. Expert technology solutions for your business."
-        keywords="contact CraftMinds, get quote, project proposal, hire developers, custom software development, technology consultation"
+        title="Contact CraftMind - Let's Build Together"
+        description="Have a project in mind? Get in touch with CraftMind. Share your ideas and let's create something amazing together. Expert technology solutions for your business."
+        keywords="contact CraftMind, get quote, project proposal, hire developers, custom software development, technology consultation"
         image={`${baseUrl}/placeholder.svg`}
         url={contactUrl}
         structuredData={structuredData}

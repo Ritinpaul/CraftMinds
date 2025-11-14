@@ -11,7 +11,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4">
             <h3 className="text-sm font-extrabold uppercase tracking-[0.6rem] holographic-text">
-              CRAFTMINDS
+              CRAFTMIND
             </h3>
             <p className="text-sm text-soft">
               Your trusted tech partner for web, app, AI, and enterprise solutions.
@@ -79,7 +79,7 @@ const Footer = () => {
         {/* Social Links & Copyright */}
         <div className="mt-16 flex flex-col items-center justify-between gap-6 border-t border-white/10 pt-10 text-sm text-soft md:flex-row md:gap-4">
           <p>
-            © {currentYear} CraftMinds. All rights reserved.
+            © {currentYear} CraftMind. All rights reserved.
           </p>
           <div className="flex gap-4">
             <a

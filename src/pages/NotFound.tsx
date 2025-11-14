@@ -13,8 +13,8 @@ const NotFound = () => {
   return (
     <>
       <SEO
-        title="404 - Page Not Found | CraftMinds"
-        description="The page you're looking for doesn't exist. Return to CraftMinds homepage to explore our services."
+        title="404 - Page Not Found | CraftMind"
+        description="The page you're looking for doesn't exist. Return to CraftMind homepage to explore our services."
         url={`${baseUrl}${location.pathname}`}
       />
       <div className="flex min-h-screen items-center justify-center bg-cesta-dark text-foreground">

@@ -1,12 +1,12 @@
-# CraftMinds - Digital Crafts
+# CraftMind - Digital Crafts
 
-A modern, professional website for CraftMinds, a technology company specializing in web development, mobile apps, AI solutions, and enterprise software.
+A modern, professional website for CraftMind, a technology company specializing in web development, mobile apps, AI solutions, and enterprise software.
 
 ## Project Overview
 
-**CraftMinds** - Transforming Ideas into Digital Reality
+**CraftMind** - Transforming Ideas into Digital Reality
 
-This is a React-based website showcasing CraftMinds' services and expertise in:
+This is a React-based website showcasing CraftMind' services and expertise in:
 - Web Development
 - Mobile App Development
 - AI & Machine Learning Solutions

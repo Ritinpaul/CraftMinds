@@ -11,7 +11,7 @@ const Home = () => {
   const baseUrl = import.meta.env.VITE_SITE_URL || "https://craftmind.co.in";
   
   const organizationSchema = getOrganizationSchema({
-    name: "CraftMinds",
+    name: "CraftMind",
     url: baseUrl,
     description: "Your trusted tech partner for web, app, AI, and enterprise solutions. Expert developers delivering scalable, secure, and affordable technology solutions.",
     contactPoint: {
@@ -26,7 +26,7 @@ const Home = () => {
   });
 
   const websiteSchema = getWebSiteSchema({
-    name: "CraftMinds",
+    name: "CraftMind",
     url: baseUrl,
     description: "Transforming Ideas into Digital Reality - Web Development, Mobile Apps, AI Solutions, and Enterprise Software",
   });
@@ -36,7 +36,7 @@ const Home = () => {
   return (
     <>
       <SEO
-        title="CraftMinds - Transforming Ideas into Digital Reality"
+        title="CraftMind - Transforming Ideas into Digital Reality"
         description="Your trusted tech partner for web, app, AI, and enterprise solutions. Expert developers delivering scalable, secure, and affordable technology solutions."
         keywords="web development, mobile apps, AI solutions, enterprise software, ERP, CRM, blockchain development, custom software, hire developers, technology solutions"
         image={`${baseUrl}/placeholder.svg`}

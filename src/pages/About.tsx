@@ -42,7 +42,7 @@ const About = () => {
   ]);
 
   const organizationSchema = getOrganizationSchema({
-    name: "CraftMinds",
+    name: "CraftMind",
     url: baseUrl,
     description: "Your trusted technology partner dedicated to delivering digital excellence. We empower businesses with innovative technology solutions that drive growth, efficiency, and digital transformation.",
     contactPoint: {
@@ -57,9 +57,9 @@ const About = () => {
   return (
     <>
       <SEO
-        title="About CraftMinds - Your Trusted Technology Partner"
-        description="Learn about CraftMinds - a team of passionate technologists dedicated to delivering digital excellence. Our mission, vision, values, and commitment to innovation."
-        keywords="about CraftMinds, technology company, software development team, digital transformation, tech partner, company mission, company values"
+        title="About CraftMind - Your Trusted Technology Partner"
+        description="Learn about CraftMind - a team of passionate technologists dedicated to delivering digital excellence. Our mission, vision, values, and commitment to innovation."
+        keywords="about CraftMind, technology company, software development team, digital transformation, tech partner, company mission, company values"
         image={`${baseUrl}/placeholder.svg`}
         url={aboutUrl}
         structuredData={structuredData}
@@ -71,7 +71,7 @@ const About = () => {
       <section className="gradient-hero py-40">
         <div className="container mx-auto px-4 text-center animate-fade-in">
           <h1 className="mb-6 text-4xl font-bold md:text-6xl">
-            About <span className="holographic-text">CraftMinds</span>
+            About <span className="holographic-text">CraftMind</span>
           </h1>
           <p className="mx-auto max-w-3xl text-lg text-soft md:text-xl">
             Your trusted technology partner dedicated to delivering digital excellence
@@ -87,7 +87,7 @@ const About = () => {
               Our <span className="holographic-text">Story</span>
             </h2>
             <p className="text-lg leading-relaxed text-soft">
-              CraftMinds was founded with a simple yet powerful vision: to bridge the gap between businesses and technology. 
+              CraftMind was founded with a simple yet powerful vision: to bridge the gap between businesses and technology. 
               We recognized that many companies struggle to leverage the full potential of modern technology solutions, 
               often due to complexity, cost, or lack of expertise.
             </p>
@@ -141,7 +141,7 @@ const About = () => {
               Our <span className="holographic-text">Team</span>
             </h2>
             <p className="text-lg leading-relaxed text-soft">
-              Behind CraftMinds is a team of dedicated professionals with diverse backgrounds in software engineering, 
+              Behind CraftMind is a team of dedicated professionals with diverse backgrounds in software engineering, 
               design, project management, and business strategy. Each team member brings unique expertise and a 
               shared passion for technology and innovation.
             </p>
