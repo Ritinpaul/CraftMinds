@@ -76,7 +76,7 @@ const services = [
 ];
 
 const Services = () => {
-  const baseUrl = import.meta.env.VITE_SITE_URL || "https://craftminds.com";
+  const baseUrl = import.meta.env.VITE_SITE_URL || "https://craftmind.co.in";
   const servicesUrl = `${baseUrl}/services`;
 
   const breadcrumbSchema = getBreadcrumbSchema([

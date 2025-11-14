@@ -8,7 +8,7 @@ import SEO from "@/components/SEO";
 import { getOrganizationSchema, getWebSiteSchema } from "@/lib/structuredData";
 
 const Home = () => {
-  const baseUrl = import.meta.env.VITE_SITE_URL || "https://craftminds.com";
+  const baseUrl = import.meta.env.VITE_SITE_URL || "https://craftmind.co.in";
   
   const organizationSchema = getOrganizationSchema({
     name: "CraftMinds",

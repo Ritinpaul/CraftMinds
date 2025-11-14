@@ -30,23 +30,31 @@
     <meta name="theme-color" content="#000000" />
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://craftminds.com" />
+    <link rel="canonical" href="https://craftmind.co.in" />
     
     <!-- Preconnect for performance -->
-    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
     
-    <!-- Google tag (gtag.js) -->
+    <!-- Google tag (gtag.js) - Must be in head for proper detection -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-D777BEF9B6"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-D777BEF9B6');
+      gtag('config', 'G-D777BEF9B6', {
+        page_path: window.location.pathname,
+        send_page_view: true
+      });
     </script>
   </head>
 
   <body>
+    <!-- Google Analytics noscript fallback -->
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=G-D777BEF9B6" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

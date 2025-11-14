@@ -33,7 +33,7 @@ const values = [
 ];
 
 const About = () => {
-  const baseUrl = import.meta.env.VITE_SITE_URL || "https://craftminds.com";
+  const baseUrl = import.meta.env.VITE_SITE_URL || "https://craftmind.co.in";
   const aboutUrl = `${baseUrl}/about`;
 
   const breadcrumbSchema = getBreadcrumbSchema([

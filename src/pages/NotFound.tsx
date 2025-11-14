@@ -4,7 +4,7 @@ import SEO from "@/components/SEO";
 
 const NotFound = () => {
   const location = useLocation();
-  const baseUrl = import.meta.env.VITE_SITE_URL || "https://craftminds.com";
+  const baseUrl = import.meta.env.VITE_SITE_URL || "https://craftmind.co.in";
 
   useEffect(() => {
     console.error("404 Error: User attempted to access non-existent route:", location.pathname);

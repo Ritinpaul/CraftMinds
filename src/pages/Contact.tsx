@@ -58,24 +58,47 @@ const Contact = () => {
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     setIsSubmitting(true);
     
-    // Track form submission
-    trackFormSubmission("contact_form");
-    
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    
-    console.log("Form submitted:", values);
-    
-    toast({
-      title: "Proposal Submitted!",
-      description: "We'll get back to you within 24 hours.",
-    });
-    
-    form.reset();
-    setIsSubmitting(false);
+    try {
+      // Track form submission
+      trackFormSubmission("contact_form");
+      
+      // Submit to Formcarry
+      const formData = new FormData();
+      formData.append("name", values.name);
+      formData.append("email", values.email);
+      if (values.phone) formData.append("phone", values.phone);
+      formData.append("projectTitle", values.projectTitle);
+      formData.append("projectDescription", values.projectDescription);
+      formData.append("budget", values.budget);
+      if (values.deadline) formData.append("deadline", values.deadline);
+      
+      const response = await fetch("https://formcarry.com/s/luxzm-uXvJi", {
+        method: "POST",
+        body: formData,
+      });
+      
+      if (response.ok) {
+        toast({
+          title: "Proposal Submitted!",
+          description: "We'll get back to you within 24 hours.",
+        });
+        form.reset();
+      } else {
+        throw new Error("Form submission failed");
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      toast({
+        title: "Submission Failed",
+        description: "Please try again or contact us directly at info@craftminds.com",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
-  const baseUrl = import.meta.env.VITE_SITE_URL || "https://craftminds.com";
+  const baseUrl = import.meta.env.VITE_SITE_URL || "https://craftmind.co.in";
   const contactUrl = `${baseUrl}/contact`;
 
   const breadcrumbSchema = getBreadcrumbSchema([
@@ -86,14 +109,13 @@ const Contact = () => {
   const localBusinessSchema = getLocalBusinessSchema({
     name: "CraftMinds",
     address: {
-      streetAddress: "123 Tech Street",
-      addressLocality: "San Francisco",
-      addressRegion: "CA",
-      postalCode: "94102",
-      addressCountry: "US",
+      streetAddress: "Chennai, Tamil Nadu, India",
+      addressLocality: "",
+      addressRegion: "TN",
+      postalCode: "603203",
+      addressCountry: "INDIA",
     },
-    telephone: "+1 (555) 123-4567",
-    email: "info@craftminds.com",
+    telephone: "+91 9136474511",
     url: baseUrl,
   });
 

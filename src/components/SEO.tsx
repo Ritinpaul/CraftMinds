@@ -16,7 +16,7 @@ const defaultSEO = {
   description: "Your trusted tech partner for web, app, AI, and enterprise solutions. Expert developers delivering scalable, secure, and affordable technology solutions.",
   keywords: "web development, mobile apps, AI solutions, enterprise software, ERP, CRM, blockchain development, custom software, hire developers",
   image: "/placeholder.svg",
-  url: "https://craftminds.com",
+  url: "https://craftmind.co.in",
   type: "website",
   author: "CraftMinds",
 };
