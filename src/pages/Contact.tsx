@@ -225,7 +225,7 @@ const Contact = () => {
                           <FormItem>
                             <FormLabel>Name *</FormLabel>
                             <FormControl>
-                              <Input placeholder="John Doe" {...field} />
+                              <Input {...field} />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -239,7 +239,7 @@ const Contact = () => {
                           <FormItem>
                             <FormLabel>Email *</FormLabel>
                             <FormControl>
-                              <Input type="email" placeholder="john@example.com" {...field} />
+                              <Input type="email" {...field} />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -253,9 +253,9 @@ const Contact = () => {
                       render={({ field }) => (
                         <FormItem>
                           <FormLabel>Phone (Optional)</FormLabel>
-                          <FormControl>
-                            <Input type="tel" placeholder="+91 1234567890" {...field} />
-                          </FormControl>
+                            <FormControl>
+                              <Input type="tel" {...field} />
+                            </FormControl>
                           <FormMessage />
                         </FormItem>
                       )}
@@ -267,9 +267,9 @@ const Contact = () => {
                       render={({ field }) => (
                         <FormItem>
                           <FormLabel>Project Title *</FormLabel>
-                          <FormControl>
-                            <Input placeholder="E-commerce Website Redesign" {...field} />
-                          </FormControl>
+                            <FormControl>
+                              <Input {...field} />
+                            </FormControl>
                           <FormMessage />
                         </FormItem>
                       )}
@@ -283,7 +283,6 @@ const Contact = () => {
                           <FormLabel>Project Description *</FormLabel>
                           <FormControl>
                             <Textarea 
-                              placeholder="Tell us about your project, goals, and requirements..."
                               className="min-h-32"
                               {...field}
                             />
@@ -307,10 +306,10 @@ const Contact = () => {
                                 </SelectTrigger>
                               </FormControl>
                               <SelectContent>
-                                <SelectItem value="5k-10k">$5,000 - $10,000</SelectItem>
-                                <SelectItem value="10k-25k">$10,000 - $25,000</SelectItem>
-                                <SelectItem value="25k-50k">$25,000 - $50,000</SelectItem>
-                                <SelectItem value="50k+">$50,000+</SelectItem>
+                                <SelectItem value="50k-1l">₹50,000 - ₹1,00,000</SelectItem>
+                                <SelectItem value="1l-2.5l">₹1,00,000 - ₹2,50,000</SelectItem>
+                                <SelectItem value="2.5l-5l">₹2,50,000 - ₹5,00,000</SelectItem>
+                                <SelectItem value="5l+">₹5,00,000+</SelectItem>
                               </SelectContent>
                             </Select>
                             <FormMessage />

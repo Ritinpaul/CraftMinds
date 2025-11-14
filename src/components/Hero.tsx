@@ -499,17 +499,6 @@ const Hero = () => {
           We blend luxury aesthetics with enterprise-grade performance, crafting the future of Web,
           App, and AI solutions.
         </p>
-        <div style={heroStyles.heroButtons}>
-          <a
-            href="#solutions"
-            style={heroStyles.primaryButton}
-          >
-            Explore Solutions
-          </a>
-          <button type="button" style={heroStyles.secondaryButton}>
-            See Case Studies
-          </button>
-        </div>
       </div>
     </div>
   )
