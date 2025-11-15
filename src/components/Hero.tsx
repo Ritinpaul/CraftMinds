@@ -493,8 +493,8 @@ const Hero = () => {
 
       <div style={heroStyles.heroContent}>
         <h1 style={heroStyles.heroTitle}>
-          <span style={heroStyles.heroTitleGradient}>Web Development & Mobile Apps</span>
-          <span style={heroStyles.heroSubtitle}>AI Solutions in Chennai, India</span>
+          <span style={heroStyles.heroTitleGradient}>Digital Crafts</span>
+          <span style={heroStyles.heroSubtitle}>Elevated Experience</span>
         </h1>
         <p style={heroStyles.heroDescription}>
           We blend luxury aesthetics with enterprise-grade performance, crafting the future of Web,

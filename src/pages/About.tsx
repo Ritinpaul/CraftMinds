@@ -88,17 +88,17 @@ const About = () => {
             <h2 className="mb-12 text-center text-3xl font-bold md:text-4xl">
               Our <span className="holographic-text">Story</span>
             </h2>
-            <p className="text-lg leading-relaxed text-soft">
+            <p className="text-lg leading-relaxed text-soft text-justify">
               CraftMind was founded with a simple yet powerful vision: to bridge the gap between businesses and technology. 
               We recognized that many companies struggle to leverage the full potential of modern technology solutions, 
               often due to complexity, cost, or lack of expertise.
             </p>
-            <p className="text-lg leading-relaxed text-soft">
+            <p className="text-lg leading-relaxed text-soft text-justify">
               Today, we're a team of passionate technologists, designers, and strategists who work together to deliver 
               solutions that don't just meet expectations - they exceed them. Our diverse expertise spans web development, 
               mobile apps, AI/ML, enterprise solutions, and emerging technologies like blockchain.
             </p>
-            <p className="text-lg leading-relaxed text-soft">
+            <p className="text-lg leading-relaxed text-soft text-justify">
               What sets us apart is our commitment to understanding your unique challenges and goals. We don't offer 
               one-size-fits-all solutions. Instead, we take the time to learn about your business, your industry, 
               and your vision, then craft custom solutions that drive real results.
@@ -127,7 +127,7 @@ const About = () => {
                   <CardTitle className="text-2xl">{value.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="leading-relaxed text-soft">{value.description}</p>
+                  <p className="leading-relaxed text-soft text-justify">{value.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -142,12 +142,12 @@ const About = () => {
             <h2 className="mb-6 text-3xl font-bold md:text-4xl">
               Our <span className="holographic-text">Team</span>
             </h2>
-            <p className="text-lg leading-relaxed text-soft">
+            <p className="text-lg leading-relaxed text-soft text-justify">
               Behind CraftMind is a team of dedicated professionals with diverse backgrounds in software engineering, 
               design, project management, and business strategy. Each team member brings unique expertise and a 
               shared passion for technology and innovation.
             </p>
-            <p className="text-lg leading-relaxed text-soft">
+            <p className="text-lg leading-relaxed text-soft text-justify">
               We foster a culture of continuous learning and collaboration, ensuring that we stay at the forefront 
               of technological advancements and deliver the best possible solutions to our clients.
             </p>
