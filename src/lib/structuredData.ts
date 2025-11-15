@@ -49,7 +49,7 @@ export const getOrganizationSchema = (data: OrganizationData) => ({
         telephone: data.contactPoint.telephone,
         contactType: data.contactPoint.contactType || "Customer Service",
         email: data.contactPoint.email,
-        areaServed: data.contactPoint.areaServed || "US",
+        areaServed: data.contactPoint.areaServed || "IN",
       }
     : undefined,
   sameAs: data.sameAs || [],
@@ -80,7 +80,7 @@ export const getServiceSchema = (data: ServiceData) => ({
     "@type": data.provider["@type"] || "Organization",
     name: data.provider.name,
   },
-  areaServed: data.areaServed || "Worldwide",
+  areaServed: data.areaServed || ["IN", "Worldwide"],
   serviceType: data.serviceType,
 });
 
@@ -110,17 +110,26 @@ export const getLocalBusinessSchema = (data: {
 }) => ({
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
+  "@id": `${data.url}#organization`,
   name: data.name,
+  image: `${data.url}/placeholder.svg`,
   address: {
     "@type": "PostalAddress",
     streetAddress: data.address.streetAddress,
-    addressLocality: data.address.addressLocality,
+    addressLocality: data.address.addressLocality || "Chennai",
     addressRegion: data.address.addressRegion,
     postalCode: data.address.postalCode,
-    addressCountry: data.address.addressCountry,
+    addressCountry: data.address.addressCountry === "INDIA" ? "IN" : data.address.addressCountry,
   },
   telephone: data.telephone,
   email: data.email,
   url: data.url,
+  priceRange: "$$",
+  openingHoursSpecification: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    opens: "09:00",
+    closes: "18:00",
+  },
 });
 

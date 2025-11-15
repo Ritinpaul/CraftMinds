@@ -44,11 +44,13 @@ const About = () => {
   const organizationSchema = getOrganizationSchema({
     name: "CraftMind",
     url: baseUrl,
+    logo: `${baseUrl}/placeholder.svg`,
     description: "Your trusted technology partner dedicated to delivering digital excellence. We empower businesses with innovative technology solutions that drive growth, efficiency, and digital transformation.",
     contactPoint: {
       email: "info@craftminds.com",
+      telephone: "+91 9136474511",
       contactType: "Customer Service",
-      areaServed: "Worldwide",
+      areaServed: ["IN", "Worldwide"],
     },
   });
 
@@ -57,9 +59,9 @@ const About = () => {
   return (
     <>
       <SEO
-        title="About CraftMind - Your Trusted Technology Partner"
-        description="Learn about CraftMind - a team of passionate technologists dedicated to delivering digital excellence. Our mission, vision, values, and commitment to innovation."
-        keywords="about CraftMind, technology company, software development team, digital transformation, tech partner, company mission, company values"
+        title="About CraftMind | Technology Company in Chennai, India"
+        description="Learn about CraftMind - a leading technology company in Chennai, India. Expert software development team delivering digital transformation solutions. Discover our mission, vision, and values."
+        keywords="about CraftMind, technology company Chennai, software development team India, digital transformation company, tech partner Chennai, software company India, IT services Chennai"
         image={`${baseUrl}/placeholder.svg`}
         url={aboutUrl}
         structuredData={structuredData}

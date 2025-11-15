@@ -113,7 +113,8 @@ const Hero = () => {
     })
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
     renderer.setSize(container.clientWidth, container.clientHeight)
-    renderer.outputEncoding = THREE.sRGBEncoding
+    // Use outputColorSpace for Three.js r152+ (sRGBEncoding deprecated)
+    renderer.outputColorSpace = THREE.SRGBColorSpace
   
     // Environment (RoomEnvironment -> PMREMGenerator) to produce envMap for reflections
     const pmremGen = new THREE.PMREMGenerator(renderer)
@@ -492,8 +493,8 @@ const Hero = () => {
 
       <div style={heroStyles.heroContent}>
         <h1 style={heroStyles.heroTitle}>
-          <span style={heroStyles.heroTitleGradient}>Digital Crafts</span>
-          <span style={heroStyles.heroSubtitle}>Elevated Experience</span>
+          <span style={heroStyles.heroTitleGradient}>Web Development & Mobile Apps</span>
+          <span style={heroStyles.heroSubtitle}>AI Solutions in Chennai, India</span>
         </h1>
         <p style={heroStyles.heroDescription}>
           We blend luxury aesthetics with enterprise-grade performance, crafting the future of Web,

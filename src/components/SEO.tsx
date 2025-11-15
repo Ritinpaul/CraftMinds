@@ -12,9 +12,9 @@ interface SEOProps {
 }
 
 const defaultSEO = {
-  title: "CraftMind - Transforming Ideas into Digital Reality",
-  description: "Your trusted tech partner for web, app, AI, and enterprise solutions. Expert developers delivering scalable, secure, and affordable technology solutions.",
-  keywords: "web development, mobile apps, AI solutions, enterprise software, ERP, CRM, blockchain development, custom software, hire developers",
+  title: "CraftMind | Web Development, Mobile Apps & AI Solutions in Chennai",
+  description: "CraftMind delivers enterprise-grade web development, mobile apps, AI/ML solutions, ERP, and CRM systems. Expert developers in Chennai, India. Transform your business with scalable technology solutions.",
+  keywords: "web development Chennai, mobile app development India, AI ML solutions, enterprise software, ERP systems, CRM development, blockchain development, custom software development, hire developers Chennai",
   image: "/placeholder.svg",
   url: "https://craftmind.co.in",
   type: "website",

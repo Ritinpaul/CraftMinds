@@ -29,7 +29,7 @@ const features = [
 
 const WhyChooseUs = () => {
   return (
-    <section className="relative z-10 bg-cesta-purple/20 py-24 backdrop-blur-sm">
+    <section className="relative z-10 bg-cesta-purple/20 py-24 backdrop-blur-sm" aria-label="Why Choose Us">
       <div className="container mx-auto px-4">
         <div className="mb-16 text-center animate-fade-in">
           <h2 className="text-3xl font-bold md:text-5xl">
@@ -42,17 +42,17 @@ const WhyChooseUs = () => {
 
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           {features.map((feature, index) => (
-            <div 
+            <article 
               key={index} 
               className="glass-card glass-border space-y-4 p-8 text-center shadow-cesta-card transition-smooth hover:-translate-y-1 hover:shadow-cesta-glow animate-fade-in"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className={`mx-auto flex h-16 w-16 items-center justify-center rounded-2xl ${feature.iconGradient} shadow-cesta-glow`}>
+              <div className={`mx-auto flex h-16 w-16 items-center justify-center rounded-2xl ${feature.iconGradient} shadow-cesta-glow`} aria-hidden="true">
                 <feature.icon className="text-white text-2xl" style={{ fontSize: '1.75rem' }} />
               </div>
               <h3 className="text-xl font-semibold">{feature.title}</h3>
               <p className="text-soft">{feature.description}</p>
-            </div>
+            </article>
           ))}
         </div>
       </div>

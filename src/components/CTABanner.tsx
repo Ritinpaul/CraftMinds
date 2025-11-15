@@ -4,10 +4,10 @@ import { Sparkles } from "lucide-react";
 
 const CTABanner = () => {
   return (
-    <section className="relative z-10 py-24">
+    <section className="relative z-10 py-24" aria-label="Call to Action">
       <div className="container mx-auto px-4">
         <div className="glass-card glass-border mx-auto max-w-3xl space-y-6 rounded-3xl p-12 text-center shadow-cesta-card backdrop-blur-xl animate-fade-in">
-          <div className="flex justify-center">
+          <div className="flex justify-center" aria-hidden="true">
             <div className="flex h-16 w-16 items-center justify-center rounded-2xl icon-gradient-cyan shadow-cesta-glow">
               <Sparkles className="text-white" size={28} />
             </div>
@@ -18,7 +18,7 @@ const CTABanner = () => {
           <p className="text-lg text-soft">
             Transform your vision into reality with our expert team. Get started today!
           </p>
-          <Link to="/contact">
+          <Link to="/contact" aria-label="Contact us to start your project">
             <Button variant="action" size="lg" className="shadow-cesta-glow">
               Start Your Project
             </Button>

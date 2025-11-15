@@ -13,11 +13,13 @@ const Home = () => {
   const organizationSchema = getOrganizationSchema({
     name: "CraftMind",
     url: baseUrl,
+    logo: `${baseUrl}/placeholder.svg`,
     description: "Your trusted tech partner for web, app, AI, and enterprise solutions. Expert developers delivering scalable, secure, and affordable technology solutions.",
     contactPoint: {
       email: "info@craftminds.com",
+      telephone: "+91 9136474511",
       contactType: "Customer Service",
-      areaServed: "Worldwide",
+      areaServed: ["IN", "Worldwide"],
     },
     sameAs: [
       "https://twitter.com/craftminds_tech",
@@ -36,9 +38,9 @@ const Home = () => {
   return (
     <>
       <SEO
-        title="CraftMind - Transforming Ideas into Digital Reality"
-        description="Your trusted tech partner for web, app, AI, and enterprise solutions. Expert developers delivering scalable, secure, and affordable technology solutions."
-        keywords="web development, mobile apps, AI solutions, enterprise software, ERP, CRM, blockchain development, custom software, hire developers, technology solutions"
+        title="CraftMind | Web Development, Mobile Apps & AI Solutions in Chennai"
+        description="CraftMind delivers enterprise-grade web development, mobile apps, AI/ML solutions, ERP, and CRM systems. Expert developers in Chennai, India. Transform your business with scalable technology solutions."
+        keywords="web development Chennai, mobile app development India, AI ML solutions, enterprise software, ERP systems, CRM development, blockchain development, custom software development, hire developers Chennai"
         image={`${baseUrl}/placeholder.svg`}
         url={baseUrl}
         structuredData={structuredData}

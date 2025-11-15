@@ -49,30 +49,50 @@ const Footer = () => {
           <div>
             <h4 className="mb-4 font-semibold text-white">Services</h4>
             <ul className="space-y-3 text-sm text-soft">
-              <li>Web Development</li>
-              <li>Mobile Apps</li>
-              <li>AI & ML Solutions</li>
-              <li>Enterprise Solutions</li>
+              <li>
+                <Link to="/services" className="transition-smooth hover:text-white">
+                  Web Development
+                </Link>
+              </li>
+              <li>
+                <Link to="/services" className="transition-smooth hover:text-white">
+                  Mobile Apps
+                </Link>
+              </li>
+              <li>
+                <Link to="/services" className="transition-smooth hover:text-white">
+                  AI & ML Solutions
+                </Link>
+              </li>
+              <li>
+                <Link to="/services" className="transition-smooth hover:text-white">
+                  Enterprise Solutions
+                </Link>
+              </li>
             </ul>
           </div>
 
           {/* Contact Info */}
           <div>
             <h4 className="mb-4 font-semibold text-white">Get in Touch</h4>
-            <ul className="space-y-4 text-sm text-soft">
-              <li className="flex items-center gap-3">
-                <Mail size={16} className="text-cesta-electric" />
-                info@craftminds.com
-              </li>
-              <li className="flex items-center gap-3">
-                <Phone size={16} className="text-cesta-gold" />
-                +91 9136474511
-              </li>
-              <li className="flex items-start gap-3">
-                <MapPin size={16} className="text-cesta-purple" />
-                Chennai, Tamil Nadu, India
-              </li>
-            </ul>
+            <address className="not-italic space-y-4 text-sm text-soft">
+              <div className="flex items-center gap-3">
+                <Mail size={16} className="text-cesta-electric" aria-hidden="true" />
+                <a href="mailto:info@craftminds.com" className="transition-smooth hover:text-white">
+                  info@craftminds.com
+                </a>
+              </div>
+              <div className="flex items-center gap-3">
+                <Phone size={16} className="text-cesta-gold" aria-hidden="true" />
+                <a href="tel:+919136474511" className="transition-smooth hover:text-white">
+                  +91 9136474511
+                </a>
+              </div>
+              <div className="flex items-start gap-3">
+                <MapPin size={16} className="text-cesta-purple" aria-hidden="true" />
+                <span>Chennai, Tamil Nadu, India</span>
+              </div>
+            </address>
           </div>
         </div>
 

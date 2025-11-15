@@ -102,9 +102,9 @@ const Services = () => {
   return (
     <>
       <SEO
-        title="Our Services - CraftMind | Web, Mobile, AI & Enterprise Solutions"
-        description="Comprehensive technology solutions designed to help your business thrive. Enterprise solutions, mobile apps, AI/ML, ERP, CRM, web development, and blockchain services."
-        keywords="enterprise solutions, mobile app development, AI ML solutions, ERP systems, CRM development, website development, blockchain development, hire developers, custom software"
+        title="Our Services | Web, Mobile, AI & Enterprise Solutions - CraftMind"
+        description="Discover CraftMind's comprehensive technology services: enterprise solutions, mobile app development, AI/ML, ERP systems, CRM development, web development, and blockchain services in Chennai, India."
+        keywords="enterprise solutions Chennai, mobile app development services, AI ML solutions India, ERP systems development, CRM development services, website development Chennai, blockchain development, hire developers India"
         image={`${baseUrl}/placeholder.svg`}
         url={servicesUrl}
         structuredData={structuredData}
@@ -125,8 +125,9 @@ const Services = () => {
       </section>
 
       {/* Services Detail Section */}
-      <section className="bg-transparent py-24">
+      <section className="bg-transparent py-24" aria-label="Our Services">
         <div className="container mx-auto px-4">
+          <h2 className="sr-only">Detailed Service Information</h2>
           <div className="grid gap-12">
             {services.map((service, index) => (
               <Card 
@@ -136,11 +137,11 @@ const Services = () => {
               >
                 <CardHeader>
                   <div className="flex items-start gap-6">
-                    <div className={`flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-2xl ${service.iconGradient} shadow-cesta-glow`}>
+                    <div className={`flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-2xl ${service.iconGradient} shadow-cesta-glow`} aria-hidden="true">
                       <service.icon className="text-white text-3xl" style={{ fontSize: '2rem' }} />
                     </div>
                     <div>
-                      <CardTitle className="mb-2 text-2xl md:text-3xl">{service.title}</CardTitle>
+                      <CardTitle as="h3" className="mb-2 text-2xl md:text-3xl">{service.title}</CardTitle>
                       <CardDescription className="text-lg text-soft">{service.description}</CardDescription>
                     </div>
                   </div>

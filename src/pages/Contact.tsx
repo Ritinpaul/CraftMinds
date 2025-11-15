@@ -126,12 +126,13 @@ const Contact = () => {
     name: "CraftMind",
     address: {
       streetAddress: "Chennai, Tamil Nadu, India",
-      addressLocality: "",
+      addressLocality: "Chennai",
       addressRegion: "TN",
       postalCode: "603203",
-      addressCountry: "INDIA",
+      addressCountry: "IN",
     },
     telephone: "+91 9136474511",
+    email: "info@craftminds.com",
     url: baseUrl,
   });
 
@@ -140,9 +141,9 @@ const Contact = () => {
   return (
     <>
       <SEO
-        title="Contact CraftMind - Let's Build Together"
-        description="Have a project in mind? Get in touch with CraftMind. Share your ideas and let's create something amazing together. Expert technology solutions for your business."
-        keywords="contact CraftMind, get quote, project proposal, hire developers, custom software development, technology consultation"
+        title="Contact CraftMind | Get Quote for Web & Mobile App Development"
+        description="Contact CraftMind in Chennai, India for web development, mobile apps, AI solutions, and enterprise software. Get a free quote for your project. Call +91 9136474511 or submit your project proposal."
+        keywords="contact CraftMind Chennai, get quote web development, project proposal, hire developers Chennai, custom software development, technology consultation India, web development quote"
         image={`${baseUrl}/placeholder.svg`}
         url={contactUrl}
         structuredData={structuredData}
@@ -175,29 +176,33 @@ const Contact = () => {
                 </p>
               </div>
               
-              <div className="space-y-6">
+              <address className="not-italic space-y-6">
                 <div className="flex items-start gap-4">
-                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl icon-gradient-purple shadow-cesta-glow">
+                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl icon-gradient-purple shadow-cesta-glow" aria-hidden="true">
                     <FaEnvelope className="text-white text-xl" style={{ fontSize: '1.25rem' }} />
                   </div>
                   <div>
                     <h3 className="font-semibold mb-1">Email</h3>
-                    <p className="text-soft">info@craftminds.com</p>
+                    <a href="mailto:info@craftminds.com" className="text-soft transition-smooth hover:text-white">
+                      info@craftminds.com
+                    </a>
                   </div>
                 </div>
                 
                 <div className="flex items-start gap-4">
-                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl icon-gradient-gold shadow-cesta-glow">
+                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl icon-gradient-gold shadow-cesta-glow" aria-hidden="true">
                     <FaPhone className="text-white text-xl" style={{ fontSize: '1.25rem' }} />
                   </div>
                   <div>
                     <h3 className="font-semibold mb-1">Phone</h3>
-                    <p className="text-soft">+91 9136474511</p>
+                    <a href="tel:+919136474511" className="text-soft transition-smooth hover:text-white">
+                      +91 9136474511
+                    </a>
                   </div>
                 </div>
                 
                 <div className="flex items-start gap-4">
-                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl icon-gradient-cyan shadow-cesta-glow">
+                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl icon-gradient-cyan shadow-cesta-glow" aria-hidden="true">
                     <FaMapMarkerAlt className="text-white text-xl" style={{ fontSize: '1.25rem' }} />
                   </div>
                   <div>
@@ -208,7 +213,7 @@ const Contact = () => {
                     </p>
                   </div>
                 </div>
-              </div>
+              </address>
             </div>
 
             {/* Contact Form */}

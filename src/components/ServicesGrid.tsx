@@ -63,7 +63,7 @@ const services = [
 
 const ServicesGrid = () => {
   return (
-    <section className="relative z-10 bg-transparent py-24">
+    <section className="relative z-10 bg-transparent py-24" aria-label="Our Services">
       <div className="container mx-auto px-4">
         <div className="mb-16 text-center animate-fade-in">
           <h2 className="text-3xl font-bold md:text-5xl">
@@ -82,7 +82,7 @@ const ServicesGrid = () => {
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <CardHeader>
-                <div className={`mb-4 flex h-12 w-12 items-center justify-center rounded-xl ${service.iconGradient} shadow-cesta-glow`}>
+                <div className={`mb-4 flex h-12 w-12 items-center justify-center rounded-xl ${service.iconGradient} shadow-cesta-glow`} aria-hidden="true">
                   <service.icon className="text-white text-xl" style={{ fontSize: '1.5rem' }} />
                 </div>
                 <CardTitle className="text-xl">{service.title}</CardTitle>
