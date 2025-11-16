@@ -1,16 +1,37 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Download, FileText } from "lucide-react";
+import { FileText, Eye } from "lucide-react";
+import CaseStudyModal, { CaseStudyData } from "@/components/CaseStudyModal";
 
 const CaseStudies = () => {
-  const caseStudies = [
+  const [selectedCaseStudy, setSelectedCaseStudy] = useState<CaseStudyData | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const caseStudies: CaseStudyData[] = [
     {
       id: 1,
       title: "E-Commerce Platform Transformation",
       description: "Scalable e-commerce solution with AI-powered recommendations, processing 10K+ daily transactions.",
       industry: "Retail",
       technologies: "React, Node.js, AI/ML",
-      downloadUrl: "/case-studies/ecommerce-platform.pdf",
+      techStack: ["React", "Node.js", "Express", "MongoDB", "TensorFlow", "Stripe API"],
+      fullDescription: "We developed a comprehensive e-commerce platform that revolutionized the retail experience with AI-powered product recommendations, real-time inventory management, and seamless payment processing. The platform handles over 10,000 daily transactions with 99.9% uptime, providing customers with personalized shopping experiences while helping the business increase conversion rates by 35%.",
+      keyFeatures: [
+        "AI-powered product recommendations based on user behavior",
+        "Real-time inventory management and stock alerts",
+        "Secure payment gateway integration with multiple payment methods",
+        "Responsive design optimized for mobile and desktop",
+        "Advanced analytics dashboard for business insights",
+        "Automated order processing and fulfillment system"
+      ],
+      results: [
+        "35% increase in conversion rates",
+        "10,000+ daily transactions processed",
+        "99.9% platform uptime",
+        "40% reduction in cart abandonment",
+        "50% faster page load times"
+      ],
     },
     {
       id: 2,
@@ -18,7 +39,23 @@ const CaseStudies = () => {
       description: "HIPAA-compliant mobile application connecting patients with healthcare providers, serving 50K+ users.",
       industry: "Healthcare",
       technologies: "React Native, Firebase, AWS",
-      downloadUrl: "/case-studies/healthcare-app.pdf",
+      techStack: ["React Native", "Firebase", "AWS Lambda", "DynamoDB", "S3", "CloudFront"],
+      fullDescription: "A HIPAA-compliant mobile application that seamlessly connects patients with healthcare providers, enabling telemedicine consultations, appointment scheduling, prescription management, and secure health record access. The app serves over 50,000 active users and has transformed how patients interact with healthcare services.",
+      keyFeatures: [
+        "HIPAA-compliant secure messaging and video consultations",
+        "Real-time appointment scheduling and reminders",
+        "Digital prescription management and refill requests",
+        "Secure health record access and sharing",
+        "Medication tracking and adherence monitoring",
+        "Multi-language support for diverse patient populations"
+      ],
+      results: [
+        "50,000+ active users served",
+        "60% reduction in no-show appointments",
+        "45% increase in patient engagement",
+        "100% HIPAA compliance maintained",
+        "4.8/5 average app store rating"
+      ],
     },
     {
       id: 3,
@@ -26,9 +63,40 @@ const CaseStudies = () => {
       description: "Custom ERP solution streamlining operations for manufacturing company, reducing costs by 30%.",
       industry: "Manufacturing",
       technologies: "Python, Django, PostgreSQL",
-      downloadUrl: "/case-studies/erp-system.pdf",
+      techStack: ["Python", "Django", "PostgreSQL", "Redis", "Celery", "React"],
+      fullDescription: "A comprehensive Enterprise Resource Planning (ERP) system designed specifically for manufacturing operations. The solution integrates inventory management, production planning, supply chain coordination, financial tracking, and human resources into a unified platform, streamlining operations and reducing operational costs by 30%.",
+      keyFeatures: [
+        "Real-time inventory tracking and automated reordering",
+        "Production planning and scheduling optimization",
+        "Supply chain management and vendor coordination",
+        "Financial management and reporting dashboard",
+        "HR management with payroll and attendance tracking",
+        "Custom reporting and analytics tools"
+      ],
+      results: [
+        "30% reduction in operational costs",
+        "25% improvement in production efficiency",
+        "40% reduction in inventory holding costs",
+        "50% faster financial reporting",
+        "99.5% system reliability"
+      ],
     },
   ];
+
+  const handleOpenModal = (caseStudy: CaseStudyData) => {
+    setSelectedCaseStudy(caseStudy);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = (open: boolean) => {
+    if (!open) {
+      setIsModalOpen(false);
+      // Small delay to allow animation to complete before clearing state
+      setTimeout(() => {
+        setSelectedCaseStudy(null);
+      }, 200);
+    }
+  };
 
   return (
     <section id="case-studies" className="py-24 bg-cesta-dark" aria-labelledby="case-studies-heading">
@@ -60,18 +128,13 @@ const CaseStudies = () => {
               <CardContent>
                 <p className="text-soft mb-4">{study.description}</p>
                 <Button
-                  asChild
+                  onClick={() => handleOpenModal(study)}
                   variant="outline"
-                  className="w-full border-cesta-electric/30 text-cesta-electric hover:bg-cesta-electric/10"
+                  className="w-full border-cesta-electric/30 text-cesta-electric hover:bg-cesta-electric/10 transition-all hover:scale-[1.02]"
+                  aria-label={`View one-pager for ${study.title}`}
                 >
-                  <a
-                    href={study.downloadUrl}
-                    download
-                    aria-label={`Download case study: ${study.title}`}
-                  >
-                    <Download className="mr-2 h-4 w-4" aria-hidden="true" />
-                    Download One-Pager
-                  </a>
+                  <Eye className="mr-2 h-4 w-4" aria-hidden="true" />
+                  View One-Pager
                 </Button>
               </CardContent>
             </Card>
@@ -92,6 +155,13 @@ const CaseStudies = () => {
           </Button>
         </div>
       </div>
+
+      {/* Case Study Modal */}
+      <CaseStudyModal
+        open={isModalOpen}
+        onOpenChange={handleCloseModal}
+        caseStudy={selectedCaseStudy}
+      />
     </section>
   );
 };
