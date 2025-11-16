@@ -9,7 +9,7 @@ export interface OrganizationData {
     telephone?: string;
     contactType?: string;
     email?: string;
-    areaServed?: string;
+    areaServed?: string | string[];
   };
   sameAs?: string[];
 }

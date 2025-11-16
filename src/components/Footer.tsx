@@ -42,6 +42,16 @@ const Footer = () => {
                   Contact
                 </Link>
               </li>
+              <li>
+                <Link to="/privacy" className="text-sm text-soft transition-smooth hover:text-white">
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link to="/terms" className="text-sm text-soft transition-smooth hover:text-white">
+                  Terms of Service
+                </Link>
+              </li>
             </ul>
           </div>
 

@@ -1,7 +1,11 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import * as THREE from 'three'
 import { RoundedBoxGeometry } from 'three/examples/jsm/geometries/RoundedBoxGeometry.js'
 import { RoomEnvironment } from 'three/examples/jsm/environments/RoomEnvironment.js'
+import { Input } from '@/components/ui/input'
+import { Button } from '@/components/ui/button'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
+import { useToast } from '@/hooks/use-toast'
 
 const heroStyles = {
   container: {
@@ -85,6 +89,55 @@ const heroStyles = {
 const Hero = () => {
   const containerRef = useRef(null)
   const canvasRef = useRef(null)
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [service, setService] = useState('')
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const { toast } = useToast()
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    if (!name || !email) {
+      toast({
+        title: "Please fill in all required fields",
+        variant: "destructive",
+      })
+      return
+    }
+
+    setIsSubmitting(true)
+    try {
+      const response = await fetch('/api/lead', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name, email, service }),
+      })
+
+      const data = await response.json()
+      if (data.success) {
+        toast({
+          title: "Thank you!",
+          description: "We'll reach out to schedule your 30-minute call.",
+        })
+        setName('')
+        setEmail('')
+        setService('')
+      } else {
+        throw new Error(data.message || 'Submission failed')
+      }
+    } catch (error) {
+      console.error('Form submission error:', error)
+      toast({
+        title: "Submission failed",
+        description: "Please try again or contact us directly.",
+        variant: "destructive",
+      })
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
 
   useEffect(() => {
     const container = containerRef.current
@@ -458,26 +511,28 @@ const Hero = () => {
       document.removeEventListener('mousemove', handleMouseMove)
   
       // dispose everything carefully
-      particles.dispose && particles.dispose()
-      particleMaterial.dispose && particleMaterial.dispose()
-  
+      if (particles.dispose) particles.dispose()
+      if (particleMaterial.dispose) particleMaterial.dispose()
+
       cubeMeshes.forEach((cubeMesh) => {
-        cubeMesh.geometry && cubeMesh.geometry.dispose()
+        if (cubeMesh.geometry?.dispose) cubeMesh.geometry.dispose()
         if (Array.isArray(cubeMesh.material)) {
-          cubeMesh.material.forEach((m) => m.dispose && m.dispose())
+          cubeMesh.material.forEach((m) => {
+            if (m?.dispose) m.dispose()
+          })
         } else {
-          cubeMesh.material && cubeMesh.material.dispose && cubeMesh.material.dispose()
+          if (cubeMesh.material?.dispose) cubeMesh.material.dispose()
         }
         scene.remove(cubeMesh)
       })
-  
+
       // dispose geometry used for rounded boxes
-      roundedBoxGeo.dispose && roundedBoxGeo.dispose()
-  
+      if (roundedBoxGeo.dispose) roundedBoxGeo.dispose()
+
       // pmrem cleanup
-      pmremGen.dispose && pmremGen.dispose()
-  
-      renderer.dispose && renderer.dispose()
+      if (pmremGen.dispose) pmremGen.dispose()
+
+      if (renderer.dispose) renderer.dispose()
     }
   }, [])
   
@@ -493,13 +548,72 @@ const Hero = () => {
 
       <div style={heroStyles.heroContent}>
         <h1 style={heroStyles.heroTitle}>
-          <span style={heroStyles.heroTitleGradient}>Digital Crafts</span>
-          <span style={heroStyles.heroSubtitle}>Elevated Experience</span>
+          <span style={heroStyles.heroTitleGradient}>We build apps & AI systems that scale — fast.</span>
         </h1>
         <p style={heroStyles.heroDescription}>
-          We blend luxury aesthetics with enterprise-grade performance, crafting the future of Web,
-          App, and AI solutions.
+          Product engineering, AI & growth — we deliver measurable outcomes.
         </p>
+
+        <form 
+          onSubmit={handleSubmit}
+          className="lead-form max-w-4xl mx-auto mt-8"
+          aria-label="Schedule a call"
+          style={{
+            display: 'flex',
+            gap: '10px',
+            flexWrap: 'wrap',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <Input
+            name="name"
+            placeholder="Your name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+            aria-label="Your name"
+            className="min-w-[180px] flex-1 max-w-[200px] bg-white/10 border-white/20 text-white placeholder:text-white/60"
+            style={{ minWidth: '180px', flex: '1 1 auto', maxWidth: '200px' }}
+          />
+          <Input
+            name="email"
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+            aria-label="Email address"
+            className="min-w-[180px] flex-1 max-w-[200px] bg-white/10 border-white/20 text-white placeholder:text-white/60"
+            style={{ minWidth: '180px', flex: '1 1 auto', maxWidth: '200px' }}
+          />
+          <Select value={service} onValueChange={setService}>
+            <SelectTrigger 
+              aria-label="Service"
+              className="min-w-[180px] flex-1 max-w-[200px] bg-white/10 border-white/20 text-white"
+              style={{ minWidth: '180px', flex: '1 1 auto', maxWidth: '200px' }}
+            >
+              <SelectValue placeholder="Select service" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="web-app">Web App</SelectItem>
+              <SelectItem value="mobile-app">Mobile App</SelectItem>
+              <SelectItem value="ai-ml">AI / ML</SelectItem>
+            </SelectContent>
+          </Select>
+          <Button
+            type="submit"
+            disabled={isSubmitting}
+            className="btn-primary px-6 py-2.5 rounded-lg font-semibold bg-gradient-to-r from-purple-600 via-pink-500 to-orange-500 hover:from-purple-500 hover:via-pink-400 hover:to-orange-400 text-white shadow-lg"
+            style={{
+              padding: '10px 16px',
+              borderRadius: '8px',
+              cursor: 'pointer',
+            }}
+          >
+            {isSubmitting ? 'Scheduling...' : 'Schedule 30-min call'}
+          </Button>
+        </form>
       </div>
     </div>
   )

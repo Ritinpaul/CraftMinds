@@ -2,10 +2,12 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import ServicesGrid from "@/components/ServicesGrid";
 import WhyChooseUs from "@/components/WhyChooseUs";
+import CaseStudies from "@/components/CaseStudies";
 import CTABanner from "@/components/CTABanner";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
-import { getOrganizationSchema, getWebSiteSchema } from "@/lib/structuredData";
+import StickyContact from "@/components/StickyContact";
+import { getOrganizationSchema, getWebSiteSchema, getBreadcrumbSchema } from "@/lib/structuredData";
 
 const Home = () => {
   const baseUrl = import.meta.env.VITE_SITE_URL || "https://craftmind.co.in";
@@ -18,10 +20,12 @@ const Home = () => {
     contactPoint: {
       email: "info@craftminds.com",
       telephone: "+91 9136474511",
-      contactType: "Customer Service",
+      contactType: "sales",
       areaServed: ["IN", "Worldwide"],
     },
     sameAs: [
+      "https://www.instagram.com/thecraftmindco/",
+      "https://www.facebook.com/",
       "https://twitter.com/craftminds_tech",
       "https://linkedin.com/company/craftminds",
     ],
@@ -33,7 +37,11 @@ const Home = () => {
     description: "Transforming Ideas into Digital Reality - Web Development, Mobile Apps, AI Solutions, and Enterprise Software",
   });
 
-  const structuredData = [organizationSchema, websiteSchema];
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: "Home", url: baseUrl },
+  ]);
+
+  const structuredData = [organizationSchema, websiteSchema, breadcrumbSchema];
 
   return (
     <>
@@ -46,12 +54,19 @@ const Home = () => {
         structuredData={structuredData}
       />
       <div className="min-h-screen bg-cesta-dark text-foreground">
+        <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-cesta-electric focus:text-white focus:rounded">
+          Skip to main content
+        </a>
         <Navbar />
-        <Hero />
-        <ServicesGrid />
-        <WhyChooseUs />
-        <CTABanner />
+        <main id="main-content">
+          <Hero />
+          <ServicesGrid />
+          <WhyChooseUs />
+          <CaseStudies />
+          <CTABanner />
+        </main>
         <Footer />
+        <StickyContact />
       </div>
     </>
   );
