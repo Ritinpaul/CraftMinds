@@ -32,10 +32,10 @@ const WhyChooseUs = () => {
     <section className="relative z-10 bg-cesta-purple/20 py-24 backdrop-blur-sm" aria-label="Why Choose Us">
       <div className="container mx-auto px-4">
         <div className="mb-16 text-center animate-fade-in">
-          <h2 className="text-3xl font-bold md:text-5xl">
+          <h2 id="why-choose-us-heading" className="text-3xl font-bold md:text-5xl">
             Why <span className="holographic-text">Choose Us</span>
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-soft">
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-soft text-justify">
             We deliver excellence through innovation, dedication, and expertise
           </p>
         </div>
@@ -51,7 +51,7 @@ const WhyChooseUs = () => {
                 <feature.icon className="text-white text-2xl" style={{ fontSize: '1.75rem' }} />
               </div>
               <h3 className="text-xl font-semibold">{feature.title}</h3>
-              <p className="text-soft">{feature.description}</p>
+              <p className="text-soft text-justify">{feature.description}</p>
             </article>
           ))}
         </div>

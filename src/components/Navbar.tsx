@@ -17,7 +17,8 @@ const Navbar = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <nav className="fixed left-1/2 top-6 z-50 w-full -translate-x-1/2 px-4 sm:px-6">
+    <header>
+      <nav className="fixed left-1/2 top-6 z-50 w-full -translate-x-1/2 px-4 sm:px-6" role="navigation" aria-label="Main navigation">
       <div className="mx-auto flex max-w-7xl items-center justify-between rounded-full border border-white/10 bg-cesta-overlay px-10 py-4 shadow-cesta-card backdrop-blur-xl">
         {/* Logo */}
         <Link to="/" className="text-base font-extrabold uppercase tracking-[0.6rem] holographic-text" aria-label="CraftMind Home">
@@ -25,7 +26,7 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden items-center gap-8 md:flex">
+        <div className="hidden items-center gap-8 md:flex" role="navigation" aria-label="Main navigation">
           {navLinks.map((link) => (
             <Link
               key={link.path}
@@ -35,6 +36,7 @@ const Navbar = () => {
                   ? "text-white"
                   : "text-soft hover:text-white"
               }`}
+              aria-label={`Navigate to ${link.name} page`}
             >
               {link.name}
             </Link>
@@ -87,6 +89,7 @@ const Navbar = () => {
         </div>
       )}
     </nav>
+    </header>
   );
 };
 

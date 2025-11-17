@@ -105,7 +105,7 @@ const CaseStudies = () => {
           <h2 id="case-studies-heading" className="text-4xl font-bold mb-4">
             Case Studies
           </h2>
-          <p className="text-soft max-w-2xl mx-auto">
+          <p className="text-soft max-w-2xl mx-auto text-justify">
             Explore our successful projects and see how we've helped businesses transform their digital presence.
           </p>
         </header>
@@ -126,7 +126,7 @@ const CaseStudies = () => {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <p className="text-soft mb-4">{study.description}</p>
+                <p className="text-soft mb-4 text-justify">{study.description}</p>
                 <Button
                   onClick={() => handleOpenModal(study)}
                   variant="outline"
@@ -142,7 +142,7 @@ const CaseStudies = () => {
         </div>
 
         <div className="text-center">
-          <p className="text-soft mb-4">
+          <p className="text-soft mb-4 text-justify">
             Want to see more? Contact us for detailed case studies and project portfolios.
           </p>
           <Button

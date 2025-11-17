@@ -66,11 +66,11 @@ const ServicesGrid = () => {
     <section className="relative z-10 bg-transparent py-24" aria-label="Our Services">
       <div className="container mx-auto px-4">
         <div className="mb-16 text-center animate-fade-in">
-          <h2 className="text-3xl font-bold md:text-5xl">
-            Our <span className="holographic-text">Services</span>
+          <h2 id="services-heading" className="text-3xl font-bold md:text-5xl">
+            Our <span className="holographic-text">Development Services</span>
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-soft">
-            Comprehensive solutions tailored to your business needs
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-soft text-justify">
+            Comprehensive solutions tailored to your business needs. Explore our <a href="/services" className="text-cesta-electric hover:underline">full range of services</a> to find the perfect solution for your business.
           </p>
         </div>
 
@@ -88,7 +88,7 @@ const ServicesGrid = () => {
                 <CardTitle className="text-xl">{service.title}</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-soft">
+                <CardDescription className="text-soft text-justify">
                   {service.description}
                 </CardDescription>
               </CardContent>

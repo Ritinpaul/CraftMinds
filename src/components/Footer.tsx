@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin, Linkedin, Twitter, Github, Instagram } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin, Twitter, Facebook, Instagram } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -13,7 +13,7 @@ const Footer = () => {
             <h3 className="text-sm font-extrabold uppercase tracking-[0.6rem] holographic-text">
               CRAFTMIND
             </h3>
-            <p className="text-sm text-soft">
+            <p className="text-sm text-soft text-justify">
               Your trusted tech partner for web, app, AI, and enterprise solutions.
             </p>
           </div>
@@ -113,38 +113,38 @@ const Footer = () => {
           </p>
           <div className="flex gap-4">
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/company/craftmind"
               target="_blank"
               rel="noopener noreferrer"
               className="transition-smooth text-soft hover:text-white"
-              aria-label="LinkedIn"
+              aria-label="Follow CraftMind on LinkedIn"
             >
               <Linkedin size={20} />
             </a>
             <a
-              href="https://twitter.com"
+              href="https://twitter.com/craftmind"
               target="_blank"
               rel="noopener noreferrer"
               className="transition-smooth text-soft hover:text-white"
-              aria-label="Twitter"
+              aria-label="Follow CraftMind on X (Twitter)"
             >
               <Twitter size={20} />
             </a>
             <a
-              href="https://github.com"
+              href="https://facebook.com/craftmind"
               target="_blank"
               rel="noopener noreferrer"
               className="transition-smooth text-soft hover:text-white"
-              aria-label="GitHub"
+              aria-label="Follow CraftMind on Facebook"
             >
-              <Github size={20} />
+              <Facebook size={20} />
             </a>
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/craftmind"
               target="_blank"
               rel="noopener noreferrer"
               className="transition-smooth text-soft hover:text-white"
-              aria-label="Instagram"
+              aria-label="Follow CraftMind on Instagram"
             >
               <Instagram size={20} />
             </a>

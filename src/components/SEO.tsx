@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 
 interface SEOProps {
   title?: string;
@@ -12,10 +12,10 @@ interface SEOProps {
 }
 
 const defaultSEO = {
-  title: "CraftMind | Web Development, Mobile Apps & AI Solutions in Chennai",
-  description: "CraftMind delivers enterprise-grade web development, mobile apps, AI/ML solutions, ERP, and CRM systems. Expert developers in Chennai, India. Transform your business with scalable technology solutions.",
-  keywords: "web development Chennai, mobile app development India, AI ML solutions, enterprise software, ERP systems, CRM development, blockchain development, custom software development, hire developers Chennai",
-  image: "/placeholder.svg",
+  title: "CraftMind – Web & Mobile App Development in India",
+  description: "CraftMind builds scalable web development, mobile apps, AI/ML solutions, ERP and CRM systems in India. Transform your business with modern technology.",
+  keywords: "web development India, mobile app development India, AI ML solutions, enterprise software, ERP systems, CRM development, blockchain development, custom software development, hire developers India",
+  image: "/og-image.png",
   url: "https://craftmind.co.in",
   type: "website",
   author: "CraftMind",
@@ -31,7 +31,7 @@ export const SEO = ({
   author,
   structuredData,
 }: SEOProps) => {
-  const seo = {
+  const seo = useMemo(() => ({
     title: title || defaultSEO.title,
     description: description || defaultSEO.description,
     keywords: keywords || defaultSEO.keywords,
@@ -39,7 +39,7 @@ export const SEO = ({
     url: url || defaultSEO.url,
     type: type || defaultSEO.type,
     author: author || defaultSEO.author,
-  };
+  }), [title, description, keywords, image, url, type, author]);
 
   useEffect(() => {
     // Update document title

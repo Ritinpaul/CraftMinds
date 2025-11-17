@@ -15,7 +15,7 @@ const CTABanner = () => {
           <h2 className="text-3xl font-bold md:text-5xl">
             Have an idea? Let&apos;s <span className="holographic-text">build it together</span>
           </h2>
-          <p className="text-lg text-soft">
+          <p className="text-lg text-soft text-justify">
             Transform your vision into reality with our expert team. Get started today!
           </p>
           <Link to="/contact" aria-label="Contact us to start your project">

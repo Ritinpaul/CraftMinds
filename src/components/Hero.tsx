@@ -572,11 +572,11 @@ const Hero = () => {
       <canvas ref={canvasRef} style={heroStyles.canvas} />
 
       <div style={heroStyles.heroContent}>
-        <h1 style={heroStyles.heroTitle}>
-          <span style={heroStyles.heroTitleGradient}>We build apps & AI systems that scale — fast.</span>
+        <h1 className="text-4xl md:text-6xl font-bold mb-6 text-center">
+          CraftMind – Web & Mobile App Development in India
         </h1>
-        <p style={heroStyles.heroDescription}>
-          Product engineering, AI & growth — we deliver measurable outcomes.
+        <p style={heroStyles.heroDescription} className="text-justify">
+          CraftMind delivers enterprise-grade web development, mobile apps, AI/ML solutions, ERP, and CRM systems. Transform your business with scalable technology solutions in India.
         </p>
 
         <form 
